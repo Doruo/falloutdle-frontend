@@ -40,7 +40,6 @@
     font-family: 'overseer', serif;
 }
 
-
 /* body */
 
 body{
@@ -48,7 +47,7 @@ body{
     margin-top: 0;
     
     background-color:blanchedalmond;
-    background-image: url("../assets/backgroungs/background-f03.jpg");
+    background-image: url("../assets/backgrounds/background-f03.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -86,6 +85,7 @@ h3{
 div {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     align-items: center;
 
@@ -95,6 +95,7 @@ div {
 }
 
 footer{
+    width: 100%;
     color:white;
 }
 
