@@ -1,5 +1,11 @@
-html{
-    cursor: crosshair;
+/* cursor */
+
+*{
+    cursor: url("../assets/cursors/fallout-nuka-cola-cursor.png"), auto;
+}
+
+*:active{
+    cursor: url("../assets/cursors/fallout-nuka-cola-pointer.png"), auto;
 }
 
 /* fonts */
@@ -7,6 +13,11 @@ html{
 @font-face {
     font-family: 'overseer';
     src: url('../assets/fonts/overseer/Overseer.otf');
+}
+
+@font-face {
+    font-family: 'overseer-bold-italic';
+    src: url('../assets/fonts/overseer/Overseer\ Bold\ Italic.otf');
 }
 
 @font-face {
@@ -37,8 +48,10 @@ body{
     margin-top: 0;
     
     background-color:blanchedalmond;
-    background-image: url("../images/imgBackground.jpg");
+    background-image: url("../assets/backgroungs/background-f03.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* header */
@@ -52,11 +65,12 @@ header{
 h1, h3{
     font-family: 'overseer-italic', serif;
     text-decoration: underline;
-    color:dodgerblue;
+    color:#0066b1
 }
 
 
 h1{
+    color:#001423;
     font-size: 120%;
 }
 
@@ -70,7 +84,6 @@ h3{
 /* div */
 
 div {
-    
     display: flex;
     flex-direction: column;
 
@@ -78,7 +91,11 @@ div {
 
     border-radius: 20px;
     margin: 4%;
-    background-color: rgba(193, 173, 173, 0.71);
+    background-color:#b9c5b8;
+}
+
+footer{
+    color:white;
 }
 
 .parent{
