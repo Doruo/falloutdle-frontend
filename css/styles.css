@@ -1,0 +1,87 @@
+html{
+    cursor: crosshair;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'overseer';
+    src: url('../assets/fonts/overseer/Overseer.otf');
+}
+
+@font-face {
+    font-family: 'overseer-italic';
+    src: url('../assets/fonts/overseer/Overseer\ Italic.otf');
+}
+
+@font-face {
+    font-family: 'brushscript';
+    src: url('../assets/fonts/brush-script/BrushScriptOpti-Regular.otf');
+}
+
+@font-face {
+    font-family: 'sierramadre-italic';
+    src: url('../assets/fonts/sierra-madre/SierraMadreItalic-zGP4.ttf');
+}
+
+*:not(h1):not(h3) {
+    font-size: 50px;
+    font-family: 'overseer', serif;
+}
+
+
+/* body */
+
+body{
+    margin:25%;
+    margin-top: 0;
+    
+    background-color:blanchedalmond;
+    background-image: url("../images/imgBackground.jpg");
+    background-repeat: no-repeat;
+}
+
+/* header */
+
+header{
+    display: flex;
+}
+
+/* titres */
+
+h1, h3{
+    font-family: 'overseer-italic', serif;
+    text-decoration: underline;
+    color:dodgerblue;
+}
+
+
+h1{
+    font-size: 120%;
+}
+
+h3{
+    font-family: 'overseer', serif;
+}
+
+/* texts */
+
+
+/* div */
+
+div {
+    
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    border-radius: 20px;
+    margin: 4%;
+    background-color: rgba(193, 173, 173, 0.71);
+}
+
+.parent{
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
+}

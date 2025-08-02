@@ -2,27 +2,36 @@
 <html>
     <head>
         <title>Falloutdle</title>
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/script.js"></script>
     </head>
 
-    <body style="background-color:blanchedalmond; ">
+    <body>
+        <header>
+            <u>
+                <h1>Falloutdle</h1>
+            </u>
+        </header>
 
-        <div style="align-items: center;display: flex;justify-content: center;flex-direction: column;">
-            <h1><u>Falloutdle</u></h1>
+        <div>
+            <h3>Guess The Character</h3>
 
-            <h3>Guess today Character</h3>
             <input id="character_name" name="character_name" placeholder="Roger Maxson" required>
             <button onclick="guess()">Guess</button>
-            <p id="result">Nb guess left: 5</p>
-
-            <h3>Random Character (debug)</h3>
-            <input type="button" id="fname" name="fname" value="Click" onclick="random()">
-            <p id="resultRandom"></p>        
+            <p id="result">Nb guess left: 5</p> 
         </div>       
 
+        <div>
+            <h3>
+                Random Character</u>
+            </h3>
+            
+            <input type="button" id="fname" name="fname" value="Click" onclick="random()">
+            <p id="resultRandom"></p>        
+        </div>         
     </body>
 
-    <footer>
-        @2025 Work in progress - Code Source avaible <a href="https://github.com/Doruo/falloutdle">here</a>.
+    <footer class="center">
+        @2025 Work In Progress - Code source <a href="https://github.com/Doruo/falloutdle">here</a>.
     </footer>
 </html> 

@@ -47,7 +47,6 @@ async function guess() {
     });
 
     const reponseJSON = await response.json();
-    console.log(reponseJSON)
     const isCorrect = reponseJSON.data.isGuessed
 
     nbGuess--
@@ -55,7 +54,6 @@ async function guess() {
         text = "Success !";
     }
     else if (nbGuess <= 0){
-
         let character = await today()
         text = "Wrong ! Today's character was " + character.name + " from " + character.main_game;
 
