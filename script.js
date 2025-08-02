@@ -1,7 +1,8 @@
-const hostUrl = "https://falloutdle.net"
-const todayUrl = hostUrl + "/api/characters/today"
-const randomUrl = hostUrl +"/api/characters/random"
-const guessUrl = hostUrl +"/api/guess"
+const host = "https://falloutdle.net"
+
+const characterTodayUrl = host + "/api/characters/today"
+const gameGuessUrl = host +"/api/games/guess"
+const charRandomUrl = host +"/api/characters/random"
 
 let nbGuess = 5
 
@@ -11,17 +12,17 @@ async function fetchURL(url) {
 }
 
 async function today() {
-    const response = await fetchURL(todayUrl);
+    const response = await fetchURL(characterTodayUrl);
     console.log(response);
     return response.data
 }
 
 async function random() {
-    const response = await fetchURL(randomUrl);
-    const char = response.data
+    const response = await fetchURL(charRandomUrl);
+    const character = response.data
     const pNode = document.getElementById("resultRandom");
 
-    pNode.textContent = "Random character: " + char.name;
+    pNode.textContent = character.name;
 }
 
 async function guess() {
@@ -35,17 +36,7 @@ async function guess() {
         return
     }
 
-    nbGuess--
-    if (nbGuess <= 0) {
-        let char = await today()
-        text = "Wrong ! Today's character was " + char.name;
-
-        const pNode = document.getElementById("result");
-        pNode.textContent = text;
-        return
-    }
-
-    const response = await fetch(guessUrl, {
+    const response = await fetch(gameGuessUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -55,11 +46,21 @@ async function guess() {
         })
     });
 
-    const json = await response.json();
-    const isCorrect = json.data.isGuessed
+    const reponseJSON = await response.json();
+    console.log(reponseJSON)
+    const isCorrect = reponseJSON.data.isGuessed
 
+    nbGuess--
     if (isCorrect === true) {
-        text = "Success ! Today's character was " + char.name;
+        text = "Success !";
+    }
+    else if (nbGuess <= 0){
+
+        let character = await today()
+        text = "Wrong ! Today's character was " + character.name + " from " + character.main_game;
+
+        const pNode = document.getElementById("result");
+        pNode.textContent = text;    
     }
     else {
         text = "Wrong ! Nb guess left: " + nbGuess;
